@@ -9,8 +9,8 @@ Information.attachSchema(new SimpleSchema({
     content: {
         type: String
     },
-    direction:{
-        type:String
+    direction: {
+        type: String
     },
     category: {
         type: String
@@ -39,7 +39,7 @@ Information.deny({
 })
 
 
-Meteor.publish('Information', function (pageNum, limitPerPage, conditions = {}) {
+Meteor.publish('information', function (pageNum, limitPerPage, conditions = {}) {
     return Information.find(conditions, {
         sort: { timestamp: -1 },
         skip: (pageNum - 1) * limitPerPage,
@@ -48,16 +48,16 @@ Meteor.publish('Information', function (pageNum, limitPerPage, conditions = {}) 
 })
 
 Meteor.methods({
-    'Information_pageCount': function (limitPerPage, conditions = {}) {
+    'information_pageCount': function (limitPerPage, conditions = {}) {
         return Math.ceil(Information.find(conditions).count() / limitPerPage)
     },
-    'Information.insert': function (item) {
-        return Information.insert(item)
+    'information.insert': function (info) {
+        return Information.insert(info)
     },
-    'Information.update': function (item) {
-        return Information.update(item._id, { $set: item })
+    'information.update': function (info) {
+        return Information.update(item._id, { $set: info })
     },
-    'Information.remove': function (_id) {
+    'information.remove': function (_id) {
         return Information.remove(_id)
     },
 })
