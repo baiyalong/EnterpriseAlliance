@@ -1,5 +1,5 @@
 Template.layout_user.onCreated(function () {
-    Roles.userIsInRole(Meteor.userId(), 'user') ? null : FlowRouter.go('/user/login');
+    // Roles.userIsInRole(Meteor.userId(), 'user') ? null : FlowRouter.go('/user/login');
 })
 
 Template.layout_user.onRendered(function () {

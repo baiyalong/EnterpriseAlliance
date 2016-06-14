@@ -30,10 +30,10 @@ Template.user_login.events({
                 Meteor.logoutOtherClients();
                 var uid = Meteor.userId();
                 if (Roles.userIsInRole(uid, 'admin')) {
-                    FlowRouter.go('/admin/information')
+                    FlowRouter.go('/admin/user')
                 }
                 else if (Roles.userIsInRole(uid, 'user')) {
-                    FlowRouter.go('/user/information')
+                    FlowRouter.go('/user/profile')
                 }
                 else {
                     alert('未知的角色！', Roles.getRolesForUser(uid).toString())

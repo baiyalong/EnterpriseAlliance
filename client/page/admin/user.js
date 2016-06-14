@@ -13,7 +13,10 @@ Template.admin_user.helpers({
             e.sn = sn++;
             e.timestamp = moment(e.createdAt).format('YYYY-MM-DD HH:mm:ss');
             e.email = e.emails && e.emails[0].address;
-            e.role = _dict.role.find(function (ee) { return ee.code == e.roles[0]; }).name
+            e.role = (function () {
+                var role = _dict.role.find(function (ee) { return ee.code == e.roles && e.roles[0]; });
+                return role && role.name;
+            })()
             return e;
         })
     },

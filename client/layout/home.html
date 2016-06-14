@@ -1,13 +1,14 @@
-
-
 <template name="layout_home">
-<p>创业云平台</p>
-<hr/>
-<ul>
-    {{#each menu}}
-    <li><a href="" onclick="FlowRouter.go('/{{code}}');return false;">{{name}}</a></li>
-    {{/each}}
-</ul>
-<hr/> 
-{{>Template.dynamic template=content}}
+    <p>创业云平台</p>
+    <ul>
+        <li><a href="" onclick="FlowRouter.go('/user/register');return false;">注册</a></li>
+        <li><a href="" onclick="FlowRouter.go('/user/login');return false;">登录</a></li>
+    </ul>
+    <hr/>
+    <ul>
+        {{#each category}}
+        <li><a href="" onclick="FlowRouter.go('/{{code}}');return false;">{{name}}</a></li>
+        {{/each}}
+    </ul>
+    <hr/> {{>Template.dynamic template=content}}
 </template>

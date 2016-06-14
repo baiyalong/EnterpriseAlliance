@@ -32,6 +32,9 @@ Information.attachSchema(new SimpleSchema({
     auditTime: {
         type: Date,
         optional: true
+    },
+    status: {
+        type: Number,
     }
 }));
 
@@ -42,7 +45,7 @@ Information.deny({
 })
 
 
-Meteor.publish('information', function (pageNum, limitPerPage, conditions = {}) {
+Meteor.publish('information', function (pageNum = 1, limitPerPage = 1000, conditions = {}) {
     return Information.find(conditions, {
         sort: { timestamp: -1 },
         skip: (pageNum - 1) * limitPerPage,
@@ -58,7 +61,7 @@ Meteor.methods({
         return Information.insert(info)
     },
     'information.update': function (info) {
-        return Information.update(item._id, { $set: info })
+        return Information.update(info._id, { $set: info })
     },
     'information.remove': function (_id) {
         return Information.remove(_id)
