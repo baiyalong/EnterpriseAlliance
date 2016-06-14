@@ -1,3 +1,10 @@
 <template name="layout_user">
+<p>用户中心</p>
+<hr/>
+<ul>
+    <li><a href="" onclick="FlowRouter.go('/user/profile');return false;">我的资料</a></li>
+    <li><a href="" onclick="FlowRouter.go('/user/information');return false;">信息发布</a></li>
+</ul>
+<hr/> 
 {{>Template.dynamic template=content}}
 </template>

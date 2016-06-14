@@ -1,3 +1,9 @@
 <template name="user_profile">
-
+<p>我的资料</p>
+<div>
+    {{#with user}}
+    <p>用户名:<span>{{username}}</span></p>
+    <p>Email:<span>{{email}}</span></p>
+    {{/with}}
+</div>
 </template>

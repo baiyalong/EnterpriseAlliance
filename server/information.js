@@ -30,7 +30,8 @@ Information.attachSchema(new SimpleSchema({
         optional: true
     },
     auditTime: {
-        type: Date
+        type: Date,
+        optional: true
     }
 }));
 

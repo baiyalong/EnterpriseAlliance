@@ -1,3 +1,10 @@
 <template name="layout_admin">
-    {{>Template.dynamic template=content}}
+<p>管理平台</p>
+<hr/>
+<ul>
+    <li><a href="" onclick="FlowRouter.go('/admin/user');return false;">用户管理</a></li>
+    <li><a href="" onclick="FlowRouter.go('/admin/information');return false;">信息管理</a></li>
+</ul>
+<hr/> 
+{{>Template.dynamic template=content}}
 </template>

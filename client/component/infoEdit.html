@@ -1,0 +1,21 @@
+<template name="infoEdit">
+<p>信息详情</p>
+<div>
+    {{#with info}}
+    <p>标题：<input type="text" id='title' /></p>
+    <p>分类：
+        <select id='category'>
+            {{#each category}}
+            <option value ="{{code}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </p>
+    <p>需求/资源：
+        <input type="radio" name="direction" value="requirement" /> 需求
+        <input type="radio" name="direction" value="resource" /> 资源
+    </p>
+    <p>内容：<textarea id='content' rows="3" cols="20"></textarea></p>
+    {{/with}}
+    <p><input type="button" value="提交审核" id='submit' /></p>
+</div>
+</template>
