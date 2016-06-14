@@ -1,3 +1,25 @@
 <template name="admin_user">
-
+<p>用户管理</p>
+<table>
+    <thead>
+        <tr>
+            <th>序列号</th>
+            <th>用户名</th>
+            <th>角色</th>
+            <th>Email</th>
+            <th>注册时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{sn}}</td>
+            <td>{{username}}</td>
+            <td>{{role}}</td>
+            <td>{{email}}</td>
+            <td>{{timestamp}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
 </template>

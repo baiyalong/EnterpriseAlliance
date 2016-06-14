@@ -16,7 +16,8 @@ Information.attachSchema(new SimpleSchema({
         type: String
     },
     conditions: {
-        type: Object
+        type: Object,
+        optional: true
     },
     userId: {
         type: String
@@ -25,7 +26,8 @@ Information.attachSchema(new SimpleSchema({
         type: Date
     },
     adminId: {
-        type: String
+        type: String,
+        optional: true
     },
     auditTime: {
         type: Date
